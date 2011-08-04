@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "x10_sinatra"
   gem.homepage = "http://github.com/dougsko/x10_sinatra"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Web app to control X10 stuff}
+  gem.description = %Q{Web app to control X10 stuff}
   gem.email = "dougtko@gmail.com"
   gem.authors = ["Doug P."]
   # dependencies defined in Gemfile
