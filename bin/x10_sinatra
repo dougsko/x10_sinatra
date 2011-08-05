@@ -6,6 +6,8 @@ require 'rubygems'
 require 'sinatra'
 require 'x10_sinatra'
 
+puts "starting..."
+
 get '/' do
     "<form method='POST' action='/x10'>" +
         "<input type='radio' name='device_num' value='1' checked />1<br />" +
