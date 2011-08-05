@@ -1,0 +1,35 @@
+!!!
+%html(xmlns = "http://www.w3.org/1999/xhtml")
+  %head
+    %title X10 Controller
+    %link{:charset => 'utf-8', :rel => 'stylesheet', :type => 'text/css', :href => 'style.css'}
+  %body
+    %h1 X10 Controller
+    %form(method = 'post' action = '/x10')
+      %input(type = 'radio' name = 'device_num' value = '1' checked)1
+      %br
+      %input(type = 'radio' name = 'device_num' value = '2')2
+      %br
+      %input(type = 'radio' name = 'device_num' value = '3')3
+      %br
+      %input(type = 'radio' name = 'device_num' value = '4')4
+      %br
+      %input(type = 'radio' name = 'device_num' value = '5')5
+      %br
+      %input(type = 'radio' name = 'device_num' value = '6')6
+      %br
+      %input(type = 'radio' name = 'device_num' value = '7')7
+      %br
+      %input(type = 'radio' name = 'device_num' value = '8')8
+      %br
+      %select{:name => 'device_letter'}
+        %option(value = 'a')A
+        %option(value = 'b')B
+        %option(value = 'c')C
+        %option(value = 'd')D
+        %option(value = 'e')E
+        %option(value = 'f')F
+      %input(type = 'submit' name = 'command' value = 'on')  
+      %input(type = 'submit' name = 'command' value = 'off')
+      %input(type = 'submit' name = 'command' value = 'step up')
+      %input(type = 'submit' name = 'command' value = 'step down')

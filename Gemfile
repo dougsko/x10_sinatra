@@ -9,6 +9,7 @@ source "http://rubygems.org"
 gem "sinatra"
 gem "x10-cm17a"
 gem "thin"
+gem 'haml'
 
 group :development do
   gem 'rake', '0.8.7'
