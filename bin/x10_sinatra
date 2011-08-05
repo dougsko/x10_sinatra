@@ -6,7 +6,7 @@ require 'rubygems'
 require 'sinatra'
 require 'x10_sinatra'
 
-puts "starting..."
+enable :run
 
 get '/' do
     "<form method='POST' action='/x10'>" +
