@@ -4,18 +4,34 @@
 #
 require 'rubygems'
 require 'sinatra'
+require 'yaml'
 require 'x10_sinatra'
 
+config = YAML.load_file("#{ENV['HOME']}/.x10_sinatra.yaml")    
+#puts  File.dirname(__FILE__)
+set :public, File.dirname(__FILE__)
+#puts settings.public
+
+get '/css/style.css' do
+end
+
 get '/' do
+    "<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01//EN'>" +
+    "<html>" +
+    "<head>" +
+      "<title>X10 Controller</title>" +
+        "<link rel='stylesheet' href='style.css'>" +
+    "</head>" +
+    "<body>" +
     "<form method='POST' action='/x10'>" +
-        "<input type='radio' name='device_num' value='1' checked />1<br />" +
-        "<input type='radio' name='device_num' value='2' />2<br />" +
-        "<input type='radio' name='device_num' value='3' />3<br />" +
-        "<input type='radio' name='device_num' value='4' />4<br />" +
-        "<input type='radio' name='device_num' value='5' />5<br />" +
-        "<input type='radio' name='device_num' value='6' />6<br />" +
-        "<input type='radio' name='device_num' value='7' />7<br />" +
-        "<input type='radio' name='device_num' value='8' />8<br />" +
+        "<input type='radio' name='device_num' value='1' checked />1    #{config['1']}<br />" +
+        "<input type='radio' name='device_num' value='2' />2    #{config['2']}<br />" +
+        "<input type='radio' name='device_num' value='3' />3    #{config['3']}<br />" +
+        "<input type='radio' name='device_num' value='4' />4    #{config['4']}<br />" +
+        "<input type='radio' name='device_num' value='5' />5    #{config['5']}<br />" +
+        "<input type='radio' name='device_num' value='6' />6    #{config['6']}<br />" +
+        "<input type='radio' name='device_num' value='7' />7    #{config['7']}<br />" +
+        "<input type='radio' name='device_num' value='8' />8    #{config['8']}<br />" +
         "<select name='device_letter'>" +
             "<option value='a'>A</option>" +
             "<option value='b'>B</option>" +
@@ -28,7 +44,9 @@ get '/' do
         "<input type='submit' name='command' value='off' />" +
         "<input type='submit' name='command' value='step up' />" +
         "<input type='submit' name='command' value='step down' />" +
-    "</form>"
+    "</form>" +
+    "</body>" +
+    "</html>"
 end
 
 post '/x10' do
@@ -47,4 +65,4 @@ post '/x10' do
     end
     redirect ("/")
 end
-        
+
