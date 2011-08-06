@@ -19,10 +19,10 @@ class X10Sinatra
     end
 
     def step_up
-        @device.step(5)
+        @device.step('5')
     end
 
     def step_down
-        @device.step(-5)
+        @device.step('-5')
     end
 end
