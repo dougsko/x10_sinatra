@@ -1,0 +1,20 @@
+!!!
+%html(xmlns = "http://www.w3.org/1999/xhtml")
+  %head
+    %title X10 Controller
+    %link{:charset => 'utf-8', :rel => 'stylesheet', :type => 'text/css', :href => 'style.css'}
+  %body
+    %h1 X10 Controller
+    %form(method = 'post' action = '/x10')
+      - conf = YAML.load_file("#{ENV['HOME']}/.x10_sinatra.yaml")
+      - 1.upto(8) do |i|
+        %input(type = 'radio' name = 'device_num' value = i)= conf[i.to_s]
+        -#= conf["#{i}"]
+        %br
+      %select{:name => 'device_letter'}
+        - ('a'..'f').each do |i|
+          %option(value = i)= i.upcase
+      %input(type = 'submit' name = 'command' value = 'on')  
+      %input(type = 'submit' name = 'command' value = 'off')
+      %input(type = 'submit' name = 'command' value = 'step up')
+      %input(type = 'submit' name = 'command' value = 'step down')
