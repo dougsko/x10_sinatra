@@ -12,7 +12,7 @@ gem "thin"
 gem 'haml'
 
 group :development do
-  gem 'rake', '0.8.7'
+  gem 'rake'#, '0.8.7'
   gem "rspec", "~> 2.3.0"
   gem "bundler", "~> 1.0.0"
   gem "jeweler", "~> 1.6.3"

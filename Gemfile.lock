@@ -5,6 +5,7 @@ GEM
     diff-lcs (1.1.2)
     eventmachine (0.12.10)
     git (1.2.5)
+    haml (3.1.6)
     jeweler (1.6.4)
       bundler (~> 1.0)
       git (>= 1.2.5)
@@ -22,7 +23,7 @@ GEM
     rspec-mocks (2.3.0)
     sinatra (1.2.6)
       rack (~> 1.1)
-      tilt (< 2.0, >= 1.2.2)
+      tilt (>= 1.2.2, < 2.0)
     thin (1.2.11)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -35,8 +36,9 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.0.0)
+  haml
   jeweler (~> 1.6.3)
-  rake (= 0.8.7)
+  rake
   rcov
   rspec (~> 2.3.0)
   sinatra
