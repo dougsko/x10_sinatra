@@ -5,7 +5,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'haml'
-require 'x10_sinatra'
+require '/home/doug/bin/x10_sinatra/lib/x10_sinatra.rb'
 
 enable :run
 
