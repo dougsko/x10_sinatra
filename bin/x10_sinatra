@@ -4,11 +4,12 @@
 #
 require 'rubygems'
 require 'sinatra'
+require 'yaml'
+require 'x10_sinatra'
 require 'haml'
 require '/home/doug/bin/x10_sinatra/lib/x10_sinatra.rb'
 
 enable :run
-
 
 get '/style.css' do
 end
@@ -18,6 +19,9 @@ get '/' do
 end
 
 post '/x10' do
+    if ! params.has_key? 'device_num'
+        redirect('/')
+    end
     device = params['device_letter'] + params['device_num']
     x10sinatra = X10Sinatra.new(device)
 
@@ -33,4 +37,4 @@ post '/x10' do
     end
     redirect ("/")
 end
-        
+
